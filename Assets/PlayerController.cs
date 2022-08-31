@@ -1,32 +1,37 @@
-    using System.Collections;
-    using System.Collections.Generic;
-    using UnityEngine;
-    using UnityEngine.InputSystem;
+using UnityEngine;
+using UnityEngine.InputSystem;
 
-    public class PlayerController : MonoBehaviour
-    {
+public class PlayerController : MonoBehaviour
+{
     // Start is called before the first frame update
-    private PlayerInputActions _PlayerInput;
-        Vector2 _playerMovement;
-       [SerializeField] Transform _root;
-       [SerializeField] float _speed;
-      private Rigidbody2D rb;
-      [SerializeField] Animator _animator;
-       [SerializeField] float _MovingThreshold;
+    // Vector2 _playerMovement;
+
+    [SerializeField] InputActionReference _MoveInput;
+    [SerializeField] InputActionReference _AttackInput;
+
+    [SerializeField] Transform _root;
+    [SerializeField] float _speed;
+    private Rigidbody2D rb;
+    [SerializeField] Animator _animator;
+    [SerializeField] float _MovingThreshold;
+    private PlayerInputActions _PlayerAttack;
+
     private void Awake()
     {
-        _PlayerInput = new PlayerInputActions();
-       rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
     }
     void Start()
-        {
+    {
+        _AttackInput.action.started += AttackStart;
+        _AttackInput.action.performed += UpdateAttack;
+        _AttackInput.action.canceled += EndAttack;
+    }
 
-        }
 
-        // Update is called once per frame
-        void Update()
-        {
-        Vector2 moveInput = _PlayerInput.Movement.Move.ReadValue<Vector2>();
+    // Update is called once per frame
+    void Update()
+    {
+        Vector2 moveInput = _MoveInput.action.ReadValue<Vector2>();
         if (moveInput.x > 0)
         {
             _root.rotation = Quaternion.Euler(0, 0, 0);
@@ -42,22 +47,27 @@
         else
         {                 //sinon c'est qu'on bouge pas donc false
             _animator.SetBool("Iswalking", false);
-
         }
 
     }
-    private void OnEnable()
-    {
-        _PlayerInput.Enable();
-    }
-    private void OnDisable()
-    {
-        _PlayerInput.Disable();
-    }
 
-     void FixedUpdate()
+    void FixedUpdate()
     {
-        Vector2 moveInput = _PlayerInput.Movement.Move.ReadValue<Vector2>();
+        Vector2 moveInput = _MoveInput.action.ReadValue<Vector2>();
         rb.velocity = moveInput * _speed;
     }
+
+    private void AttackStart(InputAction.CallbackContext obj)
+    {
+        _animator.SetTrigger("SwordAttack");
+
+    }
+    private void UpdateAttack(InputAction.CallbackContext obj)
+    {
+    }
+    private void EndAttack(InputAction.CallbackContext obj)
+    {
+    }
+
+
 }
