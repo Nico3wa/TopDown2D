@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     [SerializeField] Animator _animator;
     [SerializeField] float _MovingThreshold;
+    [SerializeField] attack _attack;
     private PlayerInputActions _PlayerAttack;
 
     private void Awake()
@@ -67,6 +68,12 @@ public class PlayerController : MonoBehaviour
     }
     private void EndAttack(InputAction.CallbackContext obj)
     {
+    }
+
+
+    public void LaunchAttack()
+    {
+        _attack.LaunchAttack();
     }
 
 

@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -5388,9 +5388,9 @@ TextureImporter:
       Environment_259: 68884396
       Environment_35: -1648538382
       Environment_39: -1298637893
-      Environment_33: 1876684664
       Environment_42: -1309109198
       Environment_227: -535111006
+      Environment_33: 1876684664
       Environment_133: 463775387
       Environment_128: 108585805
       Environment_104: 967070383
@@ -5511,22 +5511,22 @@ TextureImporter:
       Environment_9: -1465411096
       Environment_157: -1421577061
       Environment_144: -1156938116
-      Environment_31: 1336230821
+      Environment_187: -579664238
       Environment_158: -911725173
       Environment_162: 827395479
-      Environment_187: -579664238
       Environment_213: 260983571
       Environment_256: -1482422594
-      Environment_219: 903693479
+      Environment_31: 1336230821
       Environment_97: 1848249958
       Environment_61: -519077884
       Environment_22: 1518380107
       Environment_93: 413859206
       Environment_248: 1713806977
-      Environment_264: -1952082321
+      Environment_219: 903693479
       Environment_206: 60137826
       Environment_91: 2076332608
       Environment_236: -450403940
+      Environment_264: -1952082321
       Environment_164: 2104552952
       Environment_109: 699537834
       Environment_169: -28563681
