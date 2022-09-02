@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 4409423052358443793}
   - component: {fileID: 8375263053485552687}
   - component: {fileID: 3829626436509780906}
-  - component: {fileID: 670807335340680829}
   - component: {fileID: 4507716542343380271}
   - component: {fileID: 4751109998331223508}
   - component: {fileID: 1226711463393644419}
+  - component: {fileID: 410393795310307792}
   m_Layer: 0
   m_Name: slime_0
   m_TagString: Slime
@@ -109,27 +109,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!50 &670807335340680829
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2902019460860742428}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!58 &4507716542343380271
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -159,6 +138,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hp: 3
+  _onDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  _animator: {fileID: 0}
 --- !u!114 &1226711463393644419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,3 +154,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b189af41d9dfaea4980118a5c605e04d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &410393795310307792
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2902019460860742428}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

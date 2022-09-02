@@ -7,6 +7,7 @@ public class SlimeHealth : MonoBehaviour
 {     
     [SerializeField] int _hp;
     [SerializeField] UnityEvent _onDamage;
+    [SerializeField] Animator _animator;
 
 
     // Start is called before the first frame update
@@ -22,11 +23,13 @@ public class SlimeHealth : MonoBehaviour
     {
         currenthp = currenthp - amount;
         Debug.Log(currenthp);
-        _onDamage.Invoke();
+        _animator.SetTrigger("Hit");
+
 
         if (currenthp <= 0)
         {
             Debug.Log(currenthp);
+            _animator.SetTrigger("Death");
             Destroy(gameObject);
         }
     }
