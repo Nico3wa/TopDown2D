@@ -6,11 +6,13 @@ public class attack : MonoBehaviour
 {
     [SerializeField] int _MyDamage;
 
-    SlimeHealth _savedCharacter;
+    Health _savedCharacter;
+
+
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        var h = col.attachedRigidbody.GetComponent<SlimeHealth>();
+        var h = col.attachedRigidbody.GetComponent<Health>();
         if (h != null)
         {
             _savedCharacter = h;
@@ -19,7 +21,7 @@ public class attack : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D col)
     {
-        var h = col.attachedRigidbody.GetComponent<SlimeHealth>();
+        var h = col.attachedRigidbody.GetComponent<Health>();
         if (h == _savedCharacter)
         {
             _savedCharacter = null;

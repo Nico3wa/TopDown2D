@@ -11,16 +11,12 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] Transform _root;
     [SerializeField] float _speed;
-    private Rigidbody2D rb;
+    [SerializeField] Rigidbody2D rb;
     [SerializeField] Animator _animator;
     [SerializeField] float _MovingThreshold;
     [SerializeField] attack _attack;
     private PlayerInputActions _PlayerAttack;
-
-    private void Awake()
-    {
-        rb = GetComponent<Rigidbody2D>();
-    }
+    
     void Start()
     {
         _AttackInput.action.started += AttackStart;

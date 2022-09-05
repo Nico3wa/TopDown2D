@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class SlimeHealth : MonoBehaviour
+public class Health : MonoBehaviour
 {     
     [SerializeField] int _hp;
     [SerializeField] UnityEvent _onDamage;
@@ -23,13 +23,19 @@ public class SlimeHealth : MonoBehaviour
     {
         currenthp = currenthp - amount;
         Debug.Log(currenthp);
-        _animator.SetTrigger("Hit");
+        if(_animator!=null)
+        {
+            _animator.SetTrigger("Hit");
+        }
 
 
         if (currenthp <= 0)
         {
             Debug.Log(currenthp);
-            _animator.SetTrigger("Death");
+            if (_animator != null)
+            {
+                _animator.SetTrigger("Death");
+            }
             Destroy(gameObject);
         }
     }
