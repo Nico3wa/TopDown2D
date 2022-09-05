@@ -36,7 +36,7 @@ public class Health : MonoBehaviour
             {
                 _animator.SetTrigger("Death");
             }
-            Destroy(gameObject);
+         //   Destroy(gameObject);
         }
     }
 
