@@ -6,25 +6,37 @@ public class attack : MonoBehaviour
 {
     [SerializeField] int _MyDamage;
 
-    Health _savedCharacter;
+    [SerializeField] List<Health> _savedCharacter;
+    public Health _damagingchar;
 
 
-
+    
     private void OnTriggerEnter2D(Collider2D col)
     {
         var h = col.attachedRigidbody.GetComponent<Health>();
         if (h != null)
         {
-            _savedCharacter = h;
+            if (_savedCharacter.Contains(h))
+            {
+
+            }
+            else
+            {
+                _savedCharacter.Add(h);
+            }
+          
         }
     }
 
     private void OnTriggerExit2D(Collider2D col)
     {
         var h = col.attachedRigidbody.GetComponent<Health>();
-        if (h == _savedCharacter)
+        if (h != null)
         {
-            _savedCharacter = null;
+            if (_savedCharacter.Contains(h))
+            {
+                _savedCharacter.Remove(h);
+            }
         }
     }
 
