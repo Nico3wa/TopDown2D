@@ -7,7 +7,7 @@ public class attack : MonoBehaviour
     [SerializeField] int _MyDamage;
 
     [SerializeField] List<Health> _savedCharacter;
-    public Health _damagingchar;
+
 
 
     
@@ -44,7 +44,17 @@ public class attack : MonoBehaviour
     {
         if (_savedCharacter != null)
         {
-            _savedCharacter.Damage(_MyDamage);
+            //_savedCharacter.Damage(_MyDamage);
+
+            //for (int i = 0; i < _savedCharacter.Count; i++)
+            //{
+            //    _savedCharacter[i].Damage(_MyDamage);
+            //}
+
+            foreach(Health el in _savedCharacter)
+            {
+                el.Damage(_MyDamage);
+            }
         }
     }
 

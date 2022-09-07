@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 public class Health : MonoBehaviour
-{     
+{
     [SerializeField] int _hp;
     [SerializeField] UnityEvent _onDamage;
     [SerializeField] Animator _animator;
@@ -23,7 +23,7 @@ public class Health : MonoBehaviour
     {
         currenthp = currenthp - amount;
         Debug.Log(currenthp);
-        if(_animator!=null)
+        if (_animator != null)
         {
             _animator.SetTrigger("Hit");
         }
@@ -36,13 +36,13 @@ public class Health : MonoBehaviour
             {
                 _animator.SetTrigger("Death");
             }
-         //   Destroy(gameObject);
+            if (_animator == null)
+            {
+                Destroy(gameObject);
+                {
+                }
+            }
+
         }
     }
-
-    private void FixedUpdate()
-    {
-        
-    }
-
 }

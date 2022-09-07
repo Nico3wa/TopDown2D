@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 8375263053485552687}
   - component: {fileID: 3829626436509780906}
   - component: {fileID: 4507716542343380271}
-  - component: {fileID: 4751109998331223508}
   - component: {fileID: 1226711463393644419}
   - component: {fileID: 410393795310307792}
+  - component: {fileID: 3155612392034962635}
   m_Layer: 0
   m_Name: slime_0
   m_TagString: Slime
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1254004673
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -1180185234, guid: a957de346ecfa284883ee67eee48b87c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -125,23 +125,6 @@ CircleCollider2D:
   m_Offset: {x: 0.0011310279, y: -0.016964942}
   serializedVersion: 2
   m_Radius: 0.06499645
---- !u!114 &4751109998331223508
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2902019460860742428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dbf072c3e694f14c8e01559b20b7bb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _hp: 3
-  _onDamage:
-    m_PersistentCalls:
-      m_Calls: []
-  _animator: {fileID: 0}
 --- !u!114 &1226711463393644419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,9 +152,26 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &3155612392034962635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2902019460860742428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69011d06d9e4c0944ade6a5919dfbe4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hp: 3
+  _onDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  _animator: {fileID: 3829626436509780906}
